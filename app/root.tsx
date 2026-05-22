@@ -6,6 +6,7 @@ import { themeStore } from './lib/stores/theme';
 import { stripIndents } from './utils/stripIndent';
 import { createHead } from 'remix-island';
 import { useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/remix';
 
 import reactToastifyStyles from 'react-toastify/dist/ReactToastify.css?url';
 import globalStyles from './styles/index.scss?url';
@@ -74,6 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       {children}
       <ScrollRestoration />
       <Scripts />
+      <Analytics />
     </>
   );
 }
